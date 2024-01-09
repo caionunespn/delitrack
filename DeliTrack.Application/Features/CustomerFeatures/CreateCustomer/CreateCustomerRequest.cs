@@ -1,15 +1,14 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MediatR;
 
-namespace DeliTrack.Application.Features.DriverFeatures.CreateDriver;
+namespace DeliTrack.Application.Features.CustomerFeatures.CreateCustomer;
 
-public sealed record CreateDriverRequest(
+public sealed record CreateCustomerRequest(
     string Email,
-    bool ShowPosition,
     string Name,
     string Address,
     string City,
@@ -19,4 +18,4 @@ public sealed record CreateDriverRequest(
     string Phone,
     double CurrentPosLatitude,
     double CurrentPosLongitude
-    ) : IRequest<CreateDriverResponse>;
+    ) : IRequest<CreateCustomerResponse>;

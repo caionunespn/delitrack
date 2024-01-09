@@ -13,4 +13,6 @@ public class Order : BaseEntity
     public Guid CustomerId { get; set; }
     public Guid DriverId { get; set; }
 
+    public OrderStatus Status { get; set; }
+
 }

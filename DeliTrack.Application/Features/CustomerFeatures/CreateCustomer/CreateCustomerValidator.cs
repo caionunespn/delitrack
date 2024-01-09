@@ -1,15 +1,15 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FluentValidation;
 
-namespace DeliTrack.Application.Features.DriverFeatures.CreateDriver;
+namespace DeliTrack.Application.Features.CustomerFeatures.CreateCustomer;
 
-public sealed class CreateDriver : AbstractValidator<CreateDriverRequest>
+public sealed class CreateCustomer : AbstractValidator<CreateCustomerRequest>
 {
-    public void CreateDriverValidator()
+    public void CreateCustomerValidator()
     {
         RuleFor(x => x.Email).NotEmpty().MaximumLength(50).EmailAddress();
         RuleFor(x => x.Name).NotEmpty().MinimumLength(3).MaximumLength(100);
