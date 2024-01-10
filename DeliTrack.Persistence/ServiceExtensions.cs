@@ -22,5 +22,7 @@ public static class ServiceExtensions
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IDriverRepository, DriverRepository>();
         services.AddScoped<ICustomerRepository, CustomerRepository>();
+        services.AddScoped<IStoreRepository, StoreRepository>();
+        services.AddScoped<IOrderRepository, OrderRepository>();
     }
 }

@@ -7,9 +7,9 @@ using FluentValidation;
 
 namespace DeliTrack.Application.Features.DriverFeatures.CreateDriver;
 
-public sealed class CreateDriver : AbstractValidator<CreateDriverRequest>
+public sealed class CreateDriverValidator : AbstractValidator<CreateDriverRequest>
 {
-    public void CreateDriverValidator()
+    public CreateDriverValidator()
     {
         RuleFor(x => x.Email).NotEmpty().MaximumLength(50).EmailAddress();
         RuleFor(x => x.Name).NotEmpty().MinimumLength(3).MaximumLength(100);

@@ -9,4 +9,5 @@ namespace DeliTrack.Domain.Entities;
 
 public class Store : Entity
 {
+    public ICollection<Order> Orders { get; } = new List<Order>();
 }

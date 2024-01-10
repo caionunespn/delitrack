@@ -11,4 +11,5 @@ public class Driver : Entity
 {
     public string Email { get; set; }
     public bool ShowPosition { get; set; }
+    public ICollection<Order> Orders { get; } = new List<Order>();
 }

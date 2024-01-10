@@ -10,4 +10,5 @@ namespace DeliTrack.Domain.Entities;
 public class Customer : Entity
 {
     public string Email { get; set; }
+    public ICollection<Order> Orders { get; } = new List<Order>();
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DeliTrack.Application.Features.CustomerFeatures.CreateCustomer;
 
-public sealed class CreateCustomer : AbstractValidator<CreateCustomerRequest>
+public sealed class CreateCustomerValidator : AbstractValidator<CreateCustomerRequest>
 {
-    public void CreateCustomerValidator()
+    public CreateCustomerValidator()
     {
         RuleFor(x => x.Email).NotEmpty().MaximumLength(50).EmailAddress();
         RuleFor(x => x.Name).NotEmpty().MinimumLength(3).MaximumLength(100);

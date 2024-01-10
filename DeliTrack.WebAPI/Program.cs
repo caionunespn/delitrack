@@ -2,6 +2,7 @@ using DeliTrack.Application;
 using DeliTrack.Persistence;
 using DeliTrack.Persistence.Context;
 using DeliTrack.WebAPI.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,7 @@ var app = builder.Build();
 
 var serviceScope = app.Services.CreateScope();
 var dataContext = serviceScope.ServiceProvider.GetService<DataContext>();
-dataContext?.Database.EnsureCreated();
+await dataContext?.Database.MigrateAsync();
 
 if (app.Environment.IsDevelopment())
 {
