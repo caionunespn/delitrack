@@ -2,6 +2,8 @@
 
 Bem-vindo ao projeto DELITRACK - Rastreador de Entrega! Este projeto foi desenvolvido como uma aplicação de estudo para aprimorar habilidades em ASP.NET Core. Utilizei as tecnologias .NET 8, ASP.NET Core, Entity Framework, SignalR e Next.js para o frontend.
 
+![Funcionamento do Frontend - Uma moto percorrendo um caminho de entrega no Google Maps](https://github.com/caionunespn/delitrack/blob/master/delitrack.gif?raw=true)
+
 ## Funcionalidades
 
 O backend oferece as seguintes funcionalidades:
