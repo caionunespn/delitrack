@@ -11,4 +11,7 @@ public sealed record GetAllDriversResponse
     public Guid Id { get; set; }
     public string Email { get; set; }
     public string Name { get; set; }
+    public bool ShowPosition { get; set; }
+    public double CurrentPosLatitude { get; set; }
+    public double CurrentPosLongitude { get; set; }
 }

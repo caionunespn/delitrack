@@ -16,6 +16,7 @@ public static class ServiceExtensions
 { 
     public static void ConfigurePersistence(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddSignalR();
         var connectionString = configuration.GetConnectionString("Sqlite");
         services.AddDbContext<DataContext>(opt => opt.UseSqlite(connectionString));
 

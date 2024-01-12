@@ -1,4 +1,5 @@
 using DeliTrack.Application;
+using DeliTrack.Application.Features.OrderFeatures.GetAllOrders;
 using DeliTrack.Persistence;
 using DeliTrack.Persistence.Context;
 using DeliTrack.WebAPI.Extensions;
@@ -26,6 +27,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors(x => x
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .SetIsOriginAllowed(origin => true)
+        .AllowCredentials());
 }
 
 app.UseErrorHandler();
@@ -36,5 +42,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<OrderHub>("/order");
 
 app.Run();

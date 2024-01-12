@@ -8,4 +8,6 @@ using System.Threading.Tasks;
 namespace DeliTrack.Application.Repositories;
 
 public interface IDriverRepository : IBaseRepository<Driver>
-{ }
+{
+    Task OnDriverPositionChange(Order order, Driver driver, CancellationToken cancellationToken);
+}

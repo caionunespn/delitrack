@@ -1,4 +1,5 @@
 ﻿using DeliTrack.Application.Features.OrderFeatures.CreateOrder;
+using DeliTrack.Application.Features.OrderFeatures.GetAllOrders;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,13 @@ namespace DeliTrack.WebAPI.Controllers
         public OrderController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<GetAllOrdersResponse>>> GetAll(CancellationToken cancellationToken)
+        {
+            var response = await _mediator.Send(new GetAllOrdersRequest(), cancellationToken);
+            return Ok(response);
         }
 
         [HttpPost]

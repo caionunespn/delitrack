@@ -10,4 +10,5 @@ namespace DeliTrack.Application.Repositories;
 public interface IOrderRepository : IBaseRepository<Order>
 {
     Task<Order> GetPositions(Guid id, CancellationToken cancellationToken);
+    Task<List<Order>> GetOrdersByDriver(Guid driverId, CancellationToken cancellationToken);
 }
